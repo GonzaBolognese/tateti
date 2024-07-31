@@ -4,6 +4,7 @@ import Square from "./components/Square"
 import { TURNS } from "./constants"
 import { checkWinner } from "./logic/board"
 import { Winner } from "./components/Winner"
+import Header from "./components/Header"
 
 function App() {
   const [board, setBoard] = useState(() => {
@@ -73,39 +74,35 @@ function App() {
 
 
   return ( 
-    <main className="board">
-      <div className="title-content">
-        <h1>Ta-Te-Ti</h1>
-      </div>
-      <div>
-      <button onClick={resetGame}>Resetear el juego</button>
-      <button onClick={resetHistory}>Resetear marcador</button>
-      </div>
-      <section className="game">
-        {
-          board.map((_, index) => {
-            return(
-              <Square 
-                key={index}
-                index={index}
-                updateBoard={updateBoard}
-                >
-                  {board[index]}
-                </Square>
-            )
-          })
-        }
-      </section>
-      <section className="turn">
-        <Square isSelected={turn === TURNS.X}>{TURNS.X}</Square>
-        <Square isSelected={turn === TURNS.O}>{TURNS.O}</Square>
-      </section>
-      <section className="turn">
-        <Square >{history[0]}</Square>
-        <Square >{history[1]}</Square>
-      </section>
-      <Winner winner={winner} resetGame={resetGame} />
-    </main>
+    <>
+    <Header resetGame={resetGame} resetHistory={resetHistory} />
+      <main className="board">
+        <section className="game">
+          {
+            board.map((_, index) => {
+              return(
+                <Square 
+                  key={index}
+                  index={index}
+                  updateBoard={updateBoard}
+                  >
+                    {board[index]}
+                  </Square>
+              )
+            })
+          }
+        </section>
+        <section className="turn">
+          <Square isSelected={turn === TURNS.X}>{TURNS.X}</Square>
+          <Square isSelected={turn === TURNS.O}>{TURNS.O}</Square>
+        </section>
+        <section className="turn">
+          <Square >{history[0]}</Square>
+          <Square >{history[1]}</Square>
+        </section>
+        <Winner winner={winner} resetGame={resetGame} />
+      </main>
+    </> 
   )
 }
 
