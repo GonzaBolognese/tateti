@@ -6,7 +6,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #34495e;
+  background-color: #435267;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -33,38 +33,22 @@ body {
 
 .title-content{
   display: flex;
+  box-sizing: border-box;
   justify-content: center;
   align-items: center;
   font-size: 1.5rem;
   margin-bottom: 1.5rem;
+  background-color: #111;
 }
 .board {
   width: fit-content;
-  margin: 40px auto;
+  margin: 0px auto;
   text-align: center;
 }
 
 .board h1 {
   color: #eee;
   margin-bottom: 16px;
-}
-
-.board button {
-  padding: 8px 12px;
-  margin: 25px;
-  background: transparent;
-  border: 2px solid #eee;
-  color: #eee;
-  width: 100px;
-  border-radius: 5px;
-  transition: 0.2s;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.board button:hover {
-  background: #eee;
-  color: #222;
 }
 
 .board .game {
