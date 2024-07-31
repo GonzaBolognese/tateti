@@ -8,10 +8,8 @@ function Header({resetGame, resetHistory}) {
                 <span>Ta-Te-Ti</span>
             </div>
             <div className='div_buttons'>
-                <div>
                     <button onClick={resetGame}>Resetear el juego</button>
                     <button onClick={resetHistory}>Resetear marcador</button>
-                </div>
             </div>
         </div>
     </nav>
